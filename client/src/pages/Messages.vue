@@ -31,7 +31,7 @@ import { ref, reactive, onMounted } from 'vue';
 </script>
 
 <template>
-                <div class="">
+                <div class="section">
                 <div class="columns">
 
                     <div class="column is-one-quarter">
