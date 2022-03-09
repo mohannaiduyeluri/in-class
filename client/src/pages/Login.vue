@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { Login } from '../models/session';
 
+
     function badLogin()
     {
-        Login('mohan', 'meme')
+        Login('Moshe Cohen', 'meme')
     }
-
     function login()
     {
-        Login('vp', 'password2')
+        Login('vp', 'password')
     }
 </script>
 
@@ -22,14 +22,15 @@ import { Login } from '../models/session';
             </span>
             <span>Login</span>
         </button>
-    &nbsp;
+        &nbsp;
         <button class="button is-warning" @click="badLogin">
             <span class="icon">
                 <i class="fa fa-sign-in"></i>
             </span>
             <span>Bad Login</span>
         </button>
-    </div>
+
+</div>
 </template>
 
 

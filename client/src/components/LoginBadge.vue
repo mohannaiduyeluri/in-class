@@ -1,44 +1,46 @@
-<script>
+<script setup lang="ts">
+    import session, { Logout } from "../models/session";
 </script>
 
 <template>
-  <div class="buttons" v-if="!session.user">
-    <router-link class="button is-primary" to="/signup">
-      <strong>Sign up</strong>
-    </router-link>
-    <router-link class="button is-light" to="/login"> Log in </router-link>
-  </div>
-  <div class="buttons" v-else>
-
-<div class="avatar">
-    <img :src="session.pic"/>
-    <div>
-        <strong>{{session.user.firstName}}{{session.user.lastName}}</strong>
-        {{session.user.email}}
+    <div class="buttons" v-if="!session.user">
+        <router-link class="button is-primary" to="/signup">
+            <strong>Sign up</strong>
+        </router-link>
+        <router-link class="button is-light" to="/login">
+            Log in
+        </router-link>
     </div>
-    <a @click="logout" class="button is-primary">
-
-    </a>
-
-</div>
-  </div>
+    <div class="buttons" v-else>
+        <div class="avatar">
+            <img :src="session.user.pic" />
+            <div>
+                <strong>{{ session.user.firstName }} {{ session.user.lastName }}</strong> <br />
+                <i>{{ session.user.email }}</i>
+            </div>
+        </div>
+        <a class="button is-primary" @click="Logout()">
+            <strong>Log out</strong>
+        </a>
+    </div>
 </template>
 
-
-
-<style lang="scss" scoped>
-    .avatar{
+<style scoped lang="scss">
+    .avatar {
         display: flex;
-	    align-items: center;
+        align-items: center;
         justify-content: center;
-        margin-right: 5em;
+        margin-right: .5em;
+        gap: .5em;
         line-height: 1em;
 
-	    gap:0.5em;
-    }
-
-    img{
-        width: 48x;
-        height: 48px;
+        img {
+            width: 48px;
+            height: 48px;
+            max-height: max-content;
+            border-radius: 10%;
+            overflow: hidden;
+            object-fit: cover;
+        }
     }
 </style>
