@@ -27,8 +27,8 @@ import Messages from './Messages.vue';
                 <router-link class="navbar-item" to="/">
                   Home
                 </router-link>
-                <router-link class="navbar-item" to="/messages">
-                  Messages
+                <router-link class="navbar-item" to="/Wall">
+                  Wall
                 </router-link>
                 <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link">
