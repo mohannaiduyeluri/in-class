@@ -1,11 +1,10 @@
-const express = require('express')
-const app = express()
-const { appendFile } = require('fs');
-const http = require('http');
+const express = require('express');
 
-const hostname = '127.0.0.1';
-const port = 3000;
-const usersController = require('./controllers/users')
+const usersController = require('./controllers/users');
+
+const app = express()
+const port = process.env.PORT || 3000
+console.log(process.env);
 
 // app.get('*', (req, res, next) => {
 //     req.
@@ -24,18 +23,30 @@ const usersController = require('./controllers/users')
 //     });
 // });
 
-app
-.use('/', express.static(__dirname + '/public/'))
-.get("/api", (req, res) => {
-    res.send("You are on the home page!")
-})
-.use('/api/users', usersController);
+// app
+// .use('/', express.static(__dirname + '/public/'))
+// .get("/api", (req, res) => {
+//     res.send("You are on the home page!")
+// })
+// .use('/api/users', usersController);
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World');
-});
+app
+    
+    .use('/', express.static(__dirname + '/public/'))
+
+    .use(express.json())
+
+    .get('/api/', (req, res) => {
+        res.send('You are on the homepage');
+    })
+
+    .use('/api/users', usersController)
+
+// const server = http.createServer((req, res) => {
+//     res.statusCode = 200;
+//     res.setHeader('Content-Type', 'text/plain');
+//     res.end('Hello World');
+// });
 
 server.listen(port, hostname, () => {
     console.log('Example app listioning at at http://localhost:${port}/');

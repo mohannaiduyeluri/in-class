@@ -1,3 +1,7 @@
+/* B"H
+*/
+
+
 const list = [
     {
         firstName: 'John',
@@ -29,8 +33,8 @@ const list = [
 ];
 
 function get(id){
-    return user = userModel.list.find(user => user.id === pareseInt(id));
+    return list.find(user => user.id === parseInt(id));
 }
 
-module.exports.list = app;
+module.exports.list = list;
 module.exports.get = get;

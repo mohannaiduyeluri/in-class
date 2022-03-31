@@ -9,7 +9,7 @@ const CREATED_STATUS = 201;
 
 app
     .get('/', (req, res) => {
-        res.send(userModel.list);
+        res.send(userModel.list());
     })
     .get('/:id', (req, res) => {
 
@@ -22,6 +22,14 @@ app
         res.status(CREATED_STATUS).send(user);
     })
 
+    .delete('/:id', (req, res) => {
+        const user = userModel.remove(req.params.id);
+        res.send({success: true, errors:[], user});
+    })
+    .patch('/:id', (req, res) => {
+        const user = userModel.update(req.params.id, req.body);
+        res.send({success: true, errors:[], user});
+    })
 
 
 module.exports = app;
