@@ -24,7 +24,6 @@ jobs:
 
     - name: Build vite
       run: |
-          mkdir -p dist/server/public/
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -32,8 +31,7 @@ jobs:
 
     - name: Copy static files
       run: |
-
-          cp -a client/dist/. dist/
+          mkdir -p dist/server/public/
           cp -a client/dist/. dist/server/public/
           cp -a server/. dist/server/
           cp package.json dist/

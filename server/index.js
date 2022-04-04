@@ -1,34 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 
 const usersController = require('./controllers/users');
+const postsController = require('./controllers/posts');
 
 const app = express()
-const port = process.env.PORT || 3000
-console.log(process.env);
+const port = process.env.PORT || 3000;
 
-// app.get('*', (req, res, next) => {
-//     req.
-//     console.log("Request Received");
-//     next();
-// }).get("/", (req, res) => {
-//     res.send("You are on the home page!");
-// }).get("/about", (req, res) => {
-//     res.send("You are on the about page!", req.date);
-// }).get("/contact", (req, res) => {
-//     res.send({
-//         email: 'mohan@mail.com',
-//         phone:'696-785-7845',
-//         instegram:"mohansandeepyeluri",
-//         twitter: '@mohan'
-//     });
-// });
-
-// app
-// .use('/', express.static(__dirname + '/public/'))
-// .get("/api", (req, res) => {
-//     res.send("You are on the home page!")
-// })
-// .use('/api/users', usersController);
+//console.log(process.env);
 
 app
     
@@ -37,17 +16,11 @@ app
     .use(express.json())
 
     .get('/api/', (req, res) => {
-        res.send('You are on the homepage');
+        res.send('You are at the root of the API. For the best class ever - ' + process.env.BEST_CLASS_EVER);
     })
-
     .use('/api/users', usersController)
-
-// const server = http.createServer((req, res) => {
-//     res.statusCode = 200;
-//     res.setHeader('Content-Type', 'text/plain');
-//     res.end('Hello World');
-// });
+    .use('/api/posts', postsController)
 
 app.listen(port, () => {
-    console.log(`Example app listioning at at http://localhost:${port}/`);
-});
+  console.log(`Example app listening at http://localhost:${port}`)
+})
