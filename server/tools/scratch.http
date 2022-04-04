@@ -1,7 +1,8 @@
-http://localhost:3000
+###
+GET http://localhost:3000
 
 ###
-GET http://localhost:3000/api/users/
+GET http://localhost:3000/api/users
 
 ###
 DELETE http://localhost:3000/api/users/1
@@ -22,7 +23,6 @@ Content-Type: application/json
 ###
 PATCH http://localhost:3000/api/users/2
 Content-Type: application/json
-
 {
   "lastName": "Putin III"
 }

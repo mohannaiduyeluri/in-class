@@ -48,6 +48,6 @@ app
 //     res.end('Hello World');
 // });
 
-app.listen(port, hostname, () => {
-    console.log('Example app listioning at at http://localhost:${port}/');
+app.listen(port, () => {
+    console.log(`Example app listioning at at http://localhost:${port}/`);
 });
