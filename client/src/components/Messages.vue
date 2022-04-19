@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { ref } from 'vue';
-    import { useMessages } from '../models/messages';
+    import { useMessages } from '../models/posts';
 
     const messages = useMessages();
 

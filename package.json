@@ -1,8 +1,7 @@
 {
   "name": "in-class",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "- HTML\r  - CSS\r  - Bulma\r  - Vue 3\r  - NodeJS\r  - Express\r  - CI/CD", 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./server/index.js",
@@ -10,17 +9,16 @@
   },
   "author": "",
   "license": "ISC",
-
   "repository": {
     "type":"git",
     "url":"git+https://github.com/mohannaiduyeluri/in-class.git"  
   },
-
   "dependencies": {
     "express": "^4.17.3",
     "dotenv": "^16.0.0",
     "bcrypt": "^5.0.1",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "mongodb":"^4.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
